@@ -28,7 +28,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen font-serif text-gray-800">
+    <div className={`min-h-screen text-gray-800 ${t === 'he' ? 'font-sans' : 'font-serif'}`}>
       {/* Header */}
       <header className={`fixed w-full transition-all duration-300 z-50 ${isScrolled ? "bg-white/90 backdrop-blur-sm shadow-sm py-4" : "bg-transparent py-6"}`}>
         <div className="container mx-auto px-4 flex justify-between items-center">
@@ -77,9 +77,10 @@ export default function HomePage() {
             <CountdownTimer targetDate="2025-08-06T00:00:00" />
           </div>
 
-          <Button asChild className="bg-rose-400 hover:bg-rose-500 text-white rounded-none px-8 py-6">
-            <a href="#rsvp">{t.nav.rsvp}</a>
+          <Button className="bg-rose-400 hover:bg-rose-500 text-white rounded-none px-8 py-6">
+            <a href="#rsvp" className="block w-full h-full">{t.nav.rsvp}</a>
           </Button>
+
         </motion.div>
       </section>
 
